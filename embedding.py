@@ -22,7 +22,7 @@ def encode_text(text_list):
     concat_embedding = np.concatenate([use_embedding, sbert_embedding], axis=1)
 
     # Initialise SVD to reduce dimensionality
-    n_components = min([MAX_COMPONENTS, conat_embedding.shape[0], conat_embedding.shape[1]])
+    n_components = min([MAX_COMPONENTS, concat_embedding.shape[0], concat_embedding.shape[1]])
     svd = TruncatedSVD(n_components=n_components)
 
     return svd.fit_transform(concat_embedding)
