@@ -3,7 +3,6 @@ import tensorflow_hub as hub
 import numpy as np
 from sklearn.decomposition import TruncatedSVD
 
-MAX_COMPONENTS = 50
 
 def normalize(enc):
     # We normalize embeddings so that the average magnitude of vectors is 1
@@ -22,6 +21,7 @@ def encode_text(text_list):
     concat_embedding = np.concatenate([use_embedding, sbert_embedding], axis=1)
 
     # Initialise SVD to reduce dimensionality
+    MAX_COMPONENTS = 50
     n_components = min([MAX_COMPONENTS, concat_embedding.shape[0], concat_embedding.shape[1]])
     svd = TruncatedSVD(n_components=n_components)
 

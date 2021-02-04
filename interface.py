@@ -22,7 +22,7 @@ def create_html(distances, text_list,  file_path, num_similar_shown):
     ]
 
     closest_columns = [
-        TableColumn(field="closest_text", title="Closest examples", width=530, editor=TextEditor()),
+        TableColumn(field="closest_text", title="Closest examples", width=510, editor=TextEditor()),
         TableColumn(field="closest_dist", title="Distance", width=10, editor=TextEditor()),
     ]
 
@@ -112,7 +112,7 @@ def create_html(distances, text_list,  file_path, num_similar_shown):
     data_table = DataTable(source=source, columns=columns, width=600, height=420, selectable=True)
     closest_data_table = DataTable(source=display_source, columns=closest_columns, fit_columns=False, height=800, editable=True)
 
-    title = Div(text="""<b>Feedback Finder2</b><br><br>
+    title = Div(text="""<b>Feedback Finder</b><br><br>
     The left hand side will allow you to look at ALL feedback for this given app.<br><br>
     Click on a row to see the closest matches to this row (and the embedding distance of each match) on the right side.<br><br>
     Try using the search bar to narrow down feedback that you want to find. <br>For example, if you are looking for performance related bug reports, then try typing 'lag' into the search bar, and hitting enter.<br> Then click on one of the results on the left to see other related bits of feedback that do not explicitly mention the word 'lag' on the right.<br><br>""",
