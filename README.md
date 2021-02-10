@@ -20,7 +20,7 @@ This allows you to see not just the feedback that contains your keyword, but all
 # Prerequisites
 
 * Python 3
-* tensorflow-hub (+ dependencies - TensorFlow 2 etc.)
+* tensorflow-hub (+ dependencies - TensorFlow 2 etc. pip should do this automatically)
 * sentence-transformers
 * sklearn
 * numpy
